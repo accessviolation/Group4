@@ -1,0 +1,260 @@
+* {
+  margin: 0; padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+body{
+  height: 100%;
+  width: 99%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background-image: url(dark.png);
+}
+#container{
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+}
+#loginBox{  
+  width: 350px;
+  height: 350px;  
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center; 
+}
+.loginPanel{
+	background: white;
+	border: 5px solid #3e95f2;
+	outline: 3px solid #666;
+}
+#loginBox a{
+  display: block;
+  padding-top: 20px;
+  color: #444;
+}
+#loginLabel{
+  font-size: 2.9em;
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+#loginSubheader{   
+  color: #444;
+  margin-bottom: 35px;
+  margin-top: 10px;
+  font-size: 1.2em; 
+  font-weight: normal;
+}
+.btn {
+  background: #3498db;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #333333;
+  font-size: 1.2em;
+  background: #ffffff;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid gray;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  border: 2px solid #3e95f2;
+  text-decoration: none;
+}
+.btn:focus{
+  border: 2px solid #09C2FF;
+  text-decoration: none;
+}
+
+#loginBox a{
+	color: #444;
+	text-decoration: none;
+}
+#loginBox a:hover{
+  text-decoration: underline;
+}
+#accordianMenu {
+	background: rgba(150,150,150,.4);
+	width: 160px;
+	color: white;
+   display: inline-block;
+  vertical-align: top;
+}
+#accordianMenu h3 {
+	font-size: .9em;
+	font-weight: 400;
+	line-height: 34px;
+	padding: 0 10px;
+	cursor: pointer;
+	background: rgba(0,0,0,.5); 
+}
+
+#accordianMenu h3:hover {
+  background: #444; 
+}
+#accordianMenu li {
+	list-style-type: none;
+  border-bottom: 1px solid #aaa;
+}
+/*links*/
+#accordianMenu ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: .8em;
+	
+	font-weight: 400;
+	line-height: 35px;
+	display: block;
+	padding: 0 15px;
+	transition: all 0.15s; 
+	border-left: 5px solid #09C2FF;
+}
+/*hover effect on links*/
+#accordianMenu ul ul li a:hover{
+	background: #0087B4;
+}
+.highlighted{
+background: #0087B4;
+}
+/*Lets hide the non active LIs by default*/
+#accordianMenu ul ul {
+	display: none;
+}
+#accordianMenu li.active ul {
+	display: block;
+}
+.mainPanel{
+width: 800px;
+  height: 99%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  margin-top: -60px;
+  background-color: white;
+  border: 3px solid #666;
+  overflow-y: auto;
+}
+.mainPanel h2{
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+#header{
+  height: 100px;
+  width: 100%;
+}
+
+#menuLogo{
+  text-align: center;    
+  border-bottom: 1px solid #09C2FF;
+}
+#menuLogo p{
+  font-size: 1.6em;
+  padding-top: 30px;
+  margin-bottom: 30px;
+  letter-spacing: .5px;
+}
+#menuListLogo{
+  border-top: 3px solid #09C2FF;
+  border-bottom: 2px solid #09C2FF !important;
+ background: rgba(0,0,0,.5); 
+}
+.hide{
+    width: 0px;
+	transition-property: width;
+    transition-duration: 2s;
+}
+#alignVGSelector{
+  text-align: center;
+  margin-top: 30px;
+}
+#viewGradesTable{
+  border: 1px solid #333;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: center;
+}
+#viewGradesTable th{
+  padding: 5px 25px;
+  border: 1px solid #333;
+}
+#viewGradesTable td{
+  padding: 5px;
+  border: 1px solid #333;
+}
+.mainPanel h3{
+  text-align: center;
+}
+#deleteSelect{
+  width: 200px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#editSelect{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#deleteUserSubmit{
+  width: 130px;
+  height: 35px;
+  font-size: 1em;
+  margin-left: 25px;
+}
+#editUserSubmit{
+  width: 130px;
+  height: 35px;
+  font-size: 1em;
+}
+#addUserLabels{  
+  margin-top: 40px;
+  margin-right: 10px;
+  width: 47%;
+  display: inline-block;
+}
+#addUserInputs{
+  margin-top: 40px;
+  width: 50%;
+  display: inline-block;
+}
+#addUserLabels{
+  text-align: right;
+}
+#addUserInputs input{
+  display: block;
+}
+#addUserButtonDiv{
+  width: 100%;
+  text-align: center;
+}
+#editUserButtonDiv{
+  width: 100%;
+  text-align: center;
+}
+#addUserSubmit{
+  font-size: 1em;
+}
+#editUserlabel{
+	text-align: center;
+}
+#editUserForm{
+  display: inline;
+}
+#homelabel{
+  margin-left: 25px;
+}
+
+#submitQuizBtn{
+  font-size: 1em;
+}
+#submitQuizForm{
+  text-align: center;
+  margin-top: 45px;
+}
