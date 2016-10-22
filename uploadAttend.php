@@ -10,8 +10,6 @@
 		// Do something useful with this??
 		echo $e->getMessage();
 	}
-	$query = $myPDO->prepare('SELECT DISTINCT(COURSE) FROM GRADES WHERE STUDENT = :uid');
-	$query->execute(['uid' => $_SESSION['uid']]);
 ?>
 <!DOCTYPE html>
 	<head>
@@ -23,11 +21,11 @@
 	<script>
 	$(document).ready(function(){
 		
-		if(!$("#menuG").next().is(":visible"))
+		if(!$("#menuIG").next().is(":visible"))
 		{
-			$("#menuG").next().show();
+			$("#menuIG").next().show();
 		}
-		$("#menuVS").addClass('highlighted');
+		$("#menuIUA").addClass('highlighted');
 	});
 	</script>
 	</head>
@@ -36,10 +34,14 @@
 	<div id="header">
 	</div>
 		<?php include("menu.php"); ?>
-		<div id="viewStudentStatsPanel" class="mainPanel">		
-			<h2>Your Statistics</h2>
-				<div id="alignVGSelector">
-					<p class="subheader">Select a course to view your statistics</p>
+		<div id="uploadAttendPanel" class="mainPanel">		
+			<h2>Upload Attendance</h2>
+			<?php
+			$query = $myPDO->prepare('SELECT DISTINCT(COURSE) FROM ROSTER');
+			$query -> execute();
+			?>
+			<div id="alignVGSelector">
+					<p class="subheader">Select a course to upload attendance</p>
 					<br/>
 					<form method="post">
 					<select name="courseDropDown" id="courseDropDown" onchange="this.form.submit()">
@@ -54,16 +56,15 @@
 					</select>
 					</form>
 				</div>
-				<div id="VSgrid">
+				<div id="uploadAttendgrid">
 					<?php
 						if(isset($_POST['courseDropDown'])){
 							$_SESSION['selectedCourse'] = $_POST['courseDropDown'];
-							include('viewStatsGrid.php');
+							include('setAttendGrid.php');
 						}
 					?>
 				</div>
-		</div>
-	</div>
-	
+			</div>
+		</div>	
 	</body>
 </html>

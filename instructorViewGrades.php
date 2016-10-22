@@ -23,11 +23,11 @@
 	<script>
 	$(document).ready(function(){
 		
-		if(!$("#menuG").next().is(":visible"))
+		if(!$("#menuIG").next().is(":visible"))
 		{
-			$("#menuG").next().show();
+			$("#menuIG").next().show();
 		}
-		$("#menuVS").addClass('highlighted');
+		$("#menuIVG").addClass('highlighted');
 	});
 	</script>
 	</head>
@@ -36,32 +36,13 @@
 	<div id="header">
 	</div>
 		<?php include("menu.php"); ?>
-		<div id="viewStudentStatsPanel" class="mainPanel">		
-			<h2>Your Statistics</h2>
+		<div id="viewGradesPanel" class="mainPanel">		
+			<h2>View Grades</h2>
+			<div>
 				<div id="alignVGSelector">
-					<p class="subheader">Select a course to view your statistics</p>
-					<br/>
-					<form method="post">
-					<select name="courseDropDown" id="courseDropDown" onchange="this.form.submit()">
-							<option value="">Select a course</option>
-						<?php
-							while($row=$query->fetch()){
-						?>
-							<option value="<?php echo $row['COURSE']; ?>"><?php echo $row['COURSE']; ?></option>    
-						<?php
-							}
-						?>
-					</select>
-					</form>
-				</div>
-				<div id="VSgrid">
-					<?php
-						if(isset($_POST['courseDropDown'])){
-							$_SESSION['selectedCourse'] = $_POST['courseDropDown'];
-							include('viewStatsGrid.php');
-						}
-					?>
-				</div>
+					<p class="subheader">Select a course to view grades</p>
+					
+			</div>
 		</div>
 	</div>
 	

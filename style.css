@@ -258,3 +258,58 @@ width: 800px;
   text-align: center;
   margin-top: 45px;
 }
+#viewStatsTable{
+   margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;  
+  text-align: center;
+}
+#viewStatsTable th{
+  padding: 5px 25px;
+  text-decoration: underline;
+}
+#setAttendTable{  
+  border-collapse: collapse;
+  border: 1px solid #333;  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: left;
+}
+#setAttendTable th{
+  padding: 5px 25px;
+  border: 1px solid #333;
+}
+#setAttendTable td{
+  padding: 5px 20px;
+  border: 1px solid #333;
+}
+
+#setAttendButtonDiv{
+  text-align: center;
+}
+#attendanceSubmit{
+  font-size: 1em;
+}
+#setAttendTable input{
+  width: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+#viewAttendTable{  
+  border-collapse: collapse;
+  border: 1px solid #333;  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+#viewAttendTable th{
+  padding: 5px 25px;
+  border: 1px solid #333;
+}
+#viewAttendTable td{
+  padding: 5px 20px;
+  border: 1px solid #333;
+}
