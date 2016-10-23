@@ -40,7 +40,7 @@
 			<h2>View Grades</h2>
 			<div>
 				<div id="alignVGSelector">
-					<p class="subheader">Select a course to view grades</p>
+					<p class="subheader">Not Complete Yet</p>
 					
 			</div>
 		</div>

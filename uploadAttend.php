@@ -60,7 +60,7 @@
 					<?php
 						if(isset($_POST['courseDropDown'])){
 							$_SESSION['selectedCourse'] = $_POST['courseDropDown'];
-							include('setAttendGrid.php');
+							echo "<script>window.location = 'setAttendGrid.php'</script>";	
 						}
 					?>
 				</div>

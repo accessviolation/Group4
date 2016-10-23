@@ -14,13 +14,11 @@
 					</ul>
 				</li>
 				<?php } ?>
-				<?php if($_SESSION['role'] == 'Instructor' || $_SESSION['role'] == 'TA' || $_SESSION['role'] == 'God'){ ?>
+				<?php if($_SESSION['role'] == 'Instructor' || $_SESSION['role'] == 'God'){ ?>
 				<li>
 					<h3 id="menuIQ">Quizzes</h3>
 					<ul>
-						<?php if($_SESSION['role'] == 'Instructor'  || $_SESSION['role'] == 'God'){ ?>
 						<li id="menuIUQ"><a href="instructorUpload.php">Upload Quiz</a></li>
-						<?php } ?>
 						<li id="menuIDQ"><a href="downloadAnswers.php">Download Answers</a></li>
 					</ul>
 				</li>

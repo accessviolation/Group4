@@ -1,7 +1,7 @@
 <br/><br/>
 <h3><?php echo $_SESSION['selectedCourse'] . ' - Attendance Record'; ?></h3>
 <?php
-	$query = $myPDO->prepare('SELECT B.USER_FIRST_NAME, B.USER_LAST_NAME, A.DAYSABSENT FROM ATTENDANCE A INNER JOIN USER_INFO B ON A.STUDENT = B.rowid WHERE COURSE = :course');
+	$query = $myPDO->prepare('SELECT B.USER_FIRST_NAME, B.USER_LAST_NAME, A.DAYSABSENT FROM ATTENDANCE A INNER JOIN USER_INFO B ON A.STUDENT = B.rowid WHERE COURSE = :course ORDER BY USER_LAST_NAME');
 	$query ->bindParam(':course', $_SESSION['selectedCourse']);
 	$query->execute();
 	?>

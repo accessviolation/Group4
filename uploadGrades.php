@@ -38,7 +38,7 @@
 		<?php include("menu.php"); ?>
 		<div id="uploadGradesPanel" class="mainPanel">		
 			<h2>Upload Grades</h2>
-			
+			<p class="subheader">Not Complete Yet</p>
 		</div>
 	</div>
 	
