@@ -29,32 +29,35 @@
 		<?php include("menu.php"); ?>
 		<div id="submitQuizPanel" class="mainPanel">		
 			<h2>Submit Quiz</h2>
+			<br/>
+			<br/>
 				<?php
-				$target_dir = "uploads/";
+				$target_dir = "uploads/SubmittedQuizzes/";
 				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 				if(isset($_POST["submit"])) {
 					if (file_exists($target_file)) {
-						echo "Sorry, file already exists.";
+						echo "<script>alert('Sorry, that file already exists.'); window.location.href='submitQuiz.php';</script>";
 						$uploadOk = 0;
 					} 
-					if($imageFileType != "doc" && $imageFileType != "docx" && $imageFileType != "pdf") {
-						echo "Sorry, only DOC, DOCX, PDF files are allowed.";
+					if($imageFileType != "doc" && $imageFileType != "docx") {
+						echo "<script>alert('Sorry, only DOC, DOCX files are allowed.'); window.location.href='submitQuiz.php';</script>";
 						$uploadOk = 0;
 					}
 					
 					if ($uploadOk == 0) {
-						echo "Sorry, your file was not uploaded.";
+						echo "File was not uploaded.";
 					} else {
 						if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-							echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+							echo "<script>alert('Your file ". basename( $_FILES["fileToUpload"]["name"])." has been uploaded.'); window.location.href='submitQuiz.php';</script>";
 						} else {
-							echo " Sorry, there was an error uploading your file.";
+							echo "<script>alert('Sorry, there was an error uploading your file.'); window.location.href='submitQuiz.php';</script>";
 						}
 					}
 				}
 				?>
+				
 			</div>
 		</div>	
 	</body>

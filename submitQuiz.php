@@ -3,6 +3,13 @@
 	if(empty($_SESSION['role'])){
 		include("logout.php");
 	}
+	try{
+		$myPDO = new PDO('sqlite:gradschool.db');
+	}
+	catch(PDOException $e){
+		// Do something useful with this??
+		echo $e->getMessage();
+	}
 ?>
 <!DOCTYPE html>
 	<head>
@@ -32,10 +39,30 @@
 			
 			<form action="uploadQuiz.php" id="submitQuizForm" method="post" enctype="multipart/form-data">
 				Select file to upload:  <br/><br/>
+				<p>File must be named with the following convention:<br/>
+				Quiz_1_SENG_6230_FirstName_LastName</p>
+				<br/>
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				<br/>
 				<input id="submitQuizBtn" type="submit" class="btn" value="Upload File" name="submit">
 			</form>
+			
+			<div id="recentSubmittedQuiz">
+			<table id="recentQuizzes">
+			<tr>
+				<th>Recently Submitted Quizzes</th>
+			</tr>
+				<?php
+					$path    = __DIR__ .'\uploads\SubmittedQuizzes';
+						$files = array_diff(scandir($path), array('.', '..'));
+							foreach ($files as $name) {
+								if (strpos($name, $_SESSION['lastname']) !== false) {
+									echo '<tr><td>'.$name.'</td></tr>';
+								}
+							}				
+				?>
+				</table>
+			</div>
 		</div>
 	</div>
 	
