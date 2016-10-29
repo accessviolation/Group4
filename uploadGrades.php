@@ -10,8 +10,8 @@
 		// Do something useful with this??
 		echo $e->getMessage();
 	}
-	$query = $myPDO->prepare('SELECT DISTINCT(COURSE) FROM GRADES WHERE STUDENT = :uid');
-	$query->execute(['uid' => $_SESSION['uid']]);
+	$query = $myPDO->prepare('SELECT DISTINCT(COURSE) FROM GRADES');
+	$query->execute();
 ?>
 <!DOCTYPE html>
 	<head>
@@ -38,7 +38,30 @@
 		<?php include("menu.php"); ?>
 		<div id="uploadGradesPanel" class="mainPanel">		
 			<h2>Upload Grades</h2>
-			<p class="subheader">Not Complete Yet</p>
+			<form method="post">
+				<div id="uploadGradeUpper">
+				<p class="subheader">Select Course: </p>
+				<select id="uploadGradeSelect" name ="uploadGradeSelect" onchange="this.form.submit()">
+					<option value="">Select a course</option>
+				<?php
+							while($row=$query->fetch()){
+				?>
+					<option value="<?php echo $row['COURSE']; ?>"><?php echo $row['COURSE']; ?></option>
+				<?php
+					}
+				?>
+				</select>				
+			</form>			
+				</div>	
+				<br/>
+				<div>
+					<?php
+						if(isset($_POST['uploadGradeSelect'])){
+							$_SESSION['uploadSelectedCourse'] = $_POST['uploadGradeSelect'];
+							echo "<script>window.location = 'uploadGradesGrid.php'</script>";
+						}
+					?>
+				</div>				
 		</div>
 	</div>
 	

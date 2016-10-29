@@ -341,6 +341,53 @@ width: 800px;
   text-decoration: underline;
 }
 #recentQuizzes td{
-
   padding: 5px;
+}
+#uploadGradeUpper{
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  text-align: center;
+}
+#uploadGradeUpper select{
+  display: inline;
+}
+#uploadGradeUpper p{
+  display: inline-block;
+}
+#uploadTable{
+  text-align: left;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#uploadTable input{
+  width: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+#uploadTable th{
+  padding: 5px;
+  border: 1px solid black;
+}
+#uploadTable td{
+   padding: 5px;
+  border: 1px solid black;
+}
+#uploadGradeBtn{
+  text-align:center;
+}
+#uploadGradeBtn button{
+  font-size: 1em;
+}
+#uploadGradesGrid{
+  text-align: center;
+  margin-top: 15px;
+}
+#uploadGradesGrid p{
+  display:inline-block;
 }
